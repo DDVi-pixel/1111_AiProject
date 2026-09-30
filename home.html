@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chào mừng đến với trang web của DDVi</title>
+  <meta name="description" content="Chào mừng đến với trang web của DDVi">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23162a43'/%3E%3Cpath d='M17 18h15c10 0 16 5 16 14S42 46 32 46H17zm14 20c5 0 8-2 8-6s-3-6-8-6h-4v12z' fill='%235eead4'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      color-scheme: light;
+      --background: #eef6f8;
+      --surface: #ffffff;
+      --ink: #162a43;
+      --muted: #607286;
+      --teal: #0e9389;
+      --teal-soft: #e0f7f3;
+      --blue: #3b6eea;
+      --blue-soft: #e8efff;
+      --orange: #dd704d;
+      --orange-soft: #fff0e9;
+      --line: #dce8eb;
+      --shadow: 0 28px 70px rgba(22, 42, 67, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-width: 280px;
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 28px;
+      background:
+        radial-gradient(circle at 8% 10%, rgba(94, 234, 212, 0.36), transparent 26rem),
+        radial-gradient(circle at 92% 88%, rgba(59, 110, 234, 0.2), transparent 26rem),
+        var(--background);
+      color: var(--ink);
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    main {
+      width: min(100%, 980px);
+      padding: clamp(30px, 6vw, 72px);
+      border: 1px solid rgba(255, 255, 255, 0.88);
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+    }
+
+    header {
+      max-width: 760px;
+      margin-bottom: clamp(32px, 6vw, 54px);
+    }
+
+    .accent {
+      width: 56px;
+      height: 6px;
+      margin-bottom: 22px;
+      border-radius: 999px;
+      background: var(--teal);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.35rem, 7vw, 5.1rem);
+      line-height: 1.02;
+      letter-spacing: -0.055em;
+      text-wrap: balance;
+    }
+
+    header p {
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+    }
+
+    nav {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .page-link {
+      display: flex;
+      min-height: 138px;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      color: var(--ink);
+      font-size: 1.08rem;
+      font-weight: 750;
+      line-height: 1.35;
+      text-decoration: none;
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+
+    .page-link:nth-child(1) {
+      background: var(--teal-soft);
+    }
+
+    .page-link:nth-child(2) {
+      background: var(--blue-soft);
+    }
+
+    .page-link:nth-child(3) {
+      background: var(--orange-soft);
+    }
+
+    .page-link::after {
+      content: "→";
+      display: grid;
+      flex: 0 0 auto;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--surface);
+      font-size: 1.25rem;
+      box-shadow: 0 5px 15px rgba(22, 42, 67, 0.1);
+    }
+
+    .page-link:hover {
+      transform: translateY(-4px);
+      border-color: rgba(22, 42, 67, 0.18);
+      box-shadow: 0 14px 26px rgba(22, 42, 67, 0.12);
+    }
+
+    .page-link:focus-visible {
+      outline: 4px solid rgba(14, 147, 137, 0.28);
+      outline-offset: 4px;
+    }
+
+    @media (max-width: 740px) {
+      nav {
+        grid-template-columns: 1fr;
+      }
+
+      .page-link {
+        min-height: 96px;
+      }
+    }
+
+    @media (max-width: 440px) {
+      body {
+        padding: 0;
+      }
+
+      main {
+        min-height: 100vh;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .page-link {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="accent" aria-hidden="true"></div>
+      <h1>Chào mừng đến với trang web của DDVi</h1>
+      <p>Hãy chọn một trang để khám phá.</p>
+    </header>
+
+    <nav aria-label="Các trang của DDVi">
+      <a class="page-link" href="DDVi.html">Giới thiệu về tôi</a>
+      <a class="page-link" href="event.html">Sự kiện</a>
+      <a class="page-link" href="study_plan.html">Bản kế hoạch học tập</a>
+    </nav>
+  </main>
+</body>
+</html>

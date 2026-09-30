@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Career Day</title>
+  <meta name="description" content="AI Career Day dành cho sinh viên đại học">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2310162f'/%3E%3Ccircle cx='32' cy='32' r='15' fill='%237c5cff'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23f4ff72'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #f8f8ff;
+      --muted: #b9c0dd;
+      --night: #10162f;
+      --night-soft: #182044;
+      --purple: #7c5cff;
+      --purple-light: #9d8bff;
+      --lime: #f4ff72;
+      --cyan: #56e3e8;
+      --line: rgba(255, 255, 255, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-width: 280px;
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 28px;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 8% 12%, rgba(124, 92, 255, 0.38), transparent 32rem),
+        radial-gradient(circle at 90% 90%, rgba(86, 227, 232, 0.2), transparent 30rem),
+        var(--night);
+      color: var(--ink);
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    main {
+      position: relative;
+      width: min(100%, 1060px);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background: rgba(19, 27, 58, 0.88);
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.34);
+      backdrop-filter: blur(18px);
+    }
+
+    main::before {
+      content: "";
+      position: absolute;
+      top: -170px;
+      right: -130px;
+      width: 390px;
+      height: 390px;
+      border: 70px solid rgba(244, 255, 114, 0.08);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero {
+      position: relative;
+      z-index: 1;
+      padding: clamp(38px, 7vw, 78px);
+    }
+
+    .audience {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      margin: 0 0 24px;
+      padding: 7px 15px;
+      border: 1px solid rgba(244, 255, 114, 0.42);
+      border-radius: 999px;
+      background: rgba(244, 255, 114, 0.08);
+      color: var(--lime);
+      font-size: 0.92rem;
+      font-weight: 750;
+      letter-spacing: 0.02em;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(3.4rem, 11vw, 8rem);
+      line-height: 0.9;
+      letter-spacing: -0.065em;
+    }
+
+    .schedule {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: clamp(38px, 7vw, 66px);
+    }
+
+    .highlight-card {
+      position: relative;
+      min-height: 170px;
+      padding: clamp(22px, 4vw, 34px);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 22px;
+      background: var(--night-soft);
+    }
+
+    .highlight-card:first-child {
+      background: var(--purple);
+    }
+
+    .highlight-card:last-child {
+      color: var(--night);
+      background: var(--cyan);
+    }
+
+    .label {
+      display: block;
+      margin-bottom: 16px;
+      font-size: 0.86rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .value {
+      display: block;
+      font-size: clamp(1.7rem, 5vw, 3.4rem);
+      font-weight: 850;
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+    }
+
+    .details {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr minmax(220px, 1.15fr);
+      border-top: 1px solid var(--line);
+      background: rgba(8, 13, 32, 0.34);
+    }
+
+    .detail {
+      padding: clamp(24px, 4vw, 36px);
+      border-right: 1px solid var(--line);
+    }
+
+    .detail:last-child {
+      border-right: 0;
+    }
+
+    .detail .label {
+      color: var(--muted);
+    }
+
+    .detail .value {
+      font-size: clamp(1.12rem, 2.5vw, 1.5rem);
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+    }
+
+    .detail--deadline {
+      background: var(--lime);
+      color: var(--night);
+    }
+
+    .detail--deadline .label {
+      color: #505518;
+    }
+
+    .detail--deadline .value {
+      font-size: clamp(1.35rem, 3vw, 2rem);
+    }
+
+    .home-nav {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      padding: 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    .home-link {
+      display: inline-flex;
+      min-height: 46px;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--ink);
+      font-weight: 750;
+      text-decoration: none;
+      transition: transform 160ms ease, background 160ms ease;
+    }
+
+    .home-link:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.17);
+    }
+
+    .home-link:focus-visible {
+      outline: 3px solid var(--lime);
+      outline-offset: 4px;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 12px;
+      }
+
+      main {
+        border-radius: 22px;
+      }
+
+      .schedule,
+      .details {
+        grid-template-columns: 1fr;
+      }
+
+      .detail {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .detail:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    @media (max-width: 420px) {
+      body {
+        padding: 0;
+      }
+
+      main {
+        min-height: 100vh;
+        border: 0;
+        border-radius: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero" aria-labelledby="event-title">
+      <p class="audience">Sinh viên đại học</p>
+      <h1 id="event-title">AI Career Day</h1>
+
+      <div class="schedule">
+        <div class="highlight-card">
+          <span class="label">Ngày</span>
+          <strong class="value">15 tháng 10</strong>
+        </div>
+        <div class="highlight-card">
+          <span class="label">Thời gian</span>
+          <strong class="value">14:00–16:00</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="details" aria-label="Thông tin sự kiện">
+      <div class="detail">
+        <span class="label">Địa điểm</span>
+        <strong class="value">Phòng hội thảo A</strong>
+      </div>
+      <div class="detail">
+        <span class="label">Chi phí</span>
+        <strong class="value">Miễn phí</strong>
+      </div>
+      <div class="detail detail--deadline">
+        <span class="label">Hạn đăng ký</span>
+        <strong class="value">10 tháng 10</strong>
+      </div>
+    </section>
+    <nav class="home-nav" aria-label="Điều hướng">
+      <a class="home-link" href="home.html">Quay lại Trang Chủ</a>
+    </nav>
+  </main>
+</body>
+</html>

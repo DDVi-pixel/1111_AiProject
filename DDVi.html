@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Giới thiệu bản thân</title>
+  <meta name="description" content="Giới thiệu bản thân">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2313324a'/%3E%3Ccircle cx='32' cy='32' r='12' fill='%235eead4'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      color-scheme: light;
+      --background: #eef6f8;
+      --surface: #ffffff;
+      --text: #13324a;
+      --muted: #597082;
+      --accent: #0f8f87;
+      --line: #d5e4e8;
+      --shadow: 0 24px 60px rgba(19, 50, 74, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 32px 18px;
+      background:
+        radial-gradient(circle at 12% 15%, rgba(94, 234, 212, 0.28), transparent 30%),
+        radial-gradient(circle at 88% 85%, rgba(56, 189, 248, 0.18), transparent 30%),
+        var(--background);
+      color: var(--text);
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    main {
+      width: min(100%, 720px);
+    }
+
+    .profile-card {
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 24px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    header {
+      padding: 42px 44px 34px;
+      background: linear-gradient(135deg, #13324a 0%, #164e63 100%);
+      color: #ffffff;
+    }
+
+    .eyebrow {
+      width: 44px;
+      height: 5px;
+      margin-bottom: 20px;
+      border-radius: 999px;
+      background: #5eead4;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 6vw, 3.25rem);
+      line-height: 1.15;
+      letter-spacing: -0.035em;
+    }
+
+    dl {
+      margin: 0;
+      padding: 14px 44px 36px;
+    }
+
+    .profile-row {
+      display: grid;
+      grid-template-columns: minmax(160px, 0.75fr) minmax(220px, 1.25fr);
+      gap: 28px;
+      padding: 25px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .profile-row:last-child {
+      border-bottom: 0;
+    }
+
+    dt {
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 650;
+      letter-spacing: 0.01em;
+    }
+
+    dd {
+      min-height: 1.75rem;
+      margin: 0;
+      border-bottom: 2px solid var(--line);
+    }
+
+    dd:focus-visible {
+      outline: 3px solid rgba(15, 143, 135, 0.3);
+      outline-offset: 4px;
+    }
+
+    .home-link {
+      display: inline-flex;
+      min-height: 46px;
+      align-items: center;
+      justify-content: center;
+      margin: 22px auto 0;
+      padding: 11px 20px;
+      border: 1px solid rgba(19, 50, 74, 0.16);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--text);
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 8px 22px rgba(19, 50, 74, 0.1);
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .home-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(19, 50, 74, 0.15);
+    }
+
+    .home-link:focus-visible {
+      outline: 3px solid rgba(15, 143, 135, 0.3);
+      outline-offset: 4px;
+    }
+
+    @media (max-width: 560px) {
+      body {
+        padding: 18px 12px;
+      }
+
+      .profile-card {
+        border-radius: 18px;
+      }
+
+      header {
+        padding: 32px 26px 28px;
+      }
+
+      dl {
+        padding: 8px 26px 26px;
+      }
+
+      .profile-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 20px 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <article class="profile-card" aria-labelledby="page-title">
+      <header>
+        <div class="eyebrow" aria-hidden="true"></div>
+        <h1 id="page-title">Giới thiệu bản thân</h1>
+      </header>
+
+      <dl>
+        <div class="profile-row">
+          <dt>Họ và tên:</dt>
+          <dd>DDVi</dd>
+        </div>
+        <div class="profile-row">
+          <dt>Chuyên ngành:</dt>
+          <dd>Khoa Truyen Thong So</dd>
+        </div>
+        <div class="profile-row">
+          <dt>Kỹ năng:</dt>
+          <dd>An ngu, choi,</dd>
+        </div>
+        <div class="profile-row">
+          <dt>Mục tiêu nghề nghiệp:</dt>
+          <dd>Viet Code</dd>
+        </div>
+      </dl>
+    </article>
+    <a class="home-link" href="home.html">Quay lại Trang Chủ</a>
+  </main>
+</body>
+</html>

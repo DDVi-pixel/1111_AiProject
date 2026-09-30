@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kế hoạch học tập từ thứ Hai đến thứ Sáu</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --background: #eef5f7;
+      --surface: #ffffff;
+      --text: #17324d;
+      --muted: #526a7a;
+      --accent: #0f8b83;
+      --accent-soft: #e2f5f2;
+      --line: #d7e4e8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-width: 280px;
+      min-height: 100vh;
+      margin: 0;
+      padding: 40px 20px;
+      background: var(--background);
+      color: var(--text);
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    main {
+      width: min(100%, 1050px);
+      margin: 0 auto;
+      padding: clamp(24px, 5vw, 48px);
+      border-radius: 22px;
+      background: var(--surface);
+      box-shadow: 0 22px 55px rgba(23, 50, 77, 0.12);
+    }
+
+    h1 {
+      margin: 0 0 28px;
+      font-size: clamp(1.7rem, 5vw, 2.5rem);
+      line-height: 1.2;
+      letter-spacing: -0.035em;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+
+    table {
+      width: 100%;
+      min-width: 720px;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 15px 18px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    th {
+      background: var(--text);
+      color: #ffffff;
+      font-size: 0.92rem;
+      letter-spacing: 0.02em;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #f7fafb;
+    }
+
+    tbody tr:hover {
+      background: var(--accent-soft);
+    }
+
+    th:nth-child(3),
+    td:nth-child(3),
+    th:nth-child(4),
+    td:nth-child(4) {
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    td:first-child {
+      color: var(--accent);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      margin: 0;
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+
+    input[type="checkbox"]:focus-visible {
+      outline: 3px solid rgba(15, 139, 131, 0.3);
+      outline-offset: 3px;
+    }
+
+    .home-link {
+      display: inline-flex;
+      min-height: 46px;
+      align-items: center;
+      justify-content: center;
+      margin-top: 24px;
+      padding: 11px 20px;
+      border-radius: 999px;
+      background: var(--text);
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .home-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(23, 50, 77, 0.18);
+    }
+
+    .home-link:focus-visible {
+      outline: 3px solid rgba(15, 139, 131, 0.3);
+      outline-offset: 4px;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 0;
+      }
+
+      main {
+        min-height: 100vh;
+        border-radius: 0;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Kế hoạch học tập từ thứ Hai đến thứ Sáu</h1>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Ngày</th>
+            <th scope="col">Hoạt động</th>
+            <th scope="col">Thời lượng</th>
+            <th scope="col">Hoàn thành</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Thứ Hai</td>
+            <td>Tiếng Anh: luyện từ vựng và ngữ pháp</td>
+            <td>60 phút</td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td>Thứ Hai</td>
+            <td>AI: tìm hiểu khái niệm cơ bản</td>
+            <td>60 phút</td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td>Thứ Ba</td>
+            <td>Kỹ năng thuyết trình: xây dựng dàn ý</td>
+            <td>45 phút</td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td>Thứ Ba</td>
+            <td>Tiếng Anh: luyện nghe</td>
+            <td>45 phút</td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td>Thứ Tư</td>
+            <td>AI: thực hành sử dụng công cụ AI</td>
+            <td>60 phút</td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td>Thứ Tư</td>
+            <td>Kỹ năng thuyết trình: luyện cách diễn đạt</td>
+            <td>60 phút</td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td>Thứ Năm</td>
+            <td>Tiếng Anh: luyện nói</td>
+            <td>45 phút</td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td>Thứ Năm</td>
+            <td>AI: ôn tập và thực hành</td>
+            <td>60 phút</td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td>Thứ Sáu</td>
+            <td>Kỹ năng thuyết trình: thực hành bài nói ngắn</td>
+            <td>60 phút</td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td>Thứ Sáu</td>
+            <td>Tiếng Anh: ôn tập trong tuần</td>
+            <td>30 phút</td>
+            <td><input type="checkbox"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <a class="home-link" href="home.html">Quay lại Trang Chủ</a>
+  </main>
+</body>
+</html>
